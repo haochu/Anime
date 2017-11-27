@@ -118,18 +118,23 @@ function danmufun(){
 setInterval(function danmu_fly(){
     /// call your function here
     for (i = 0; i < 100; i++){
+        
      danmuleft[i]=danmuleft[i]-1;
      danmuleftwithpix[i] = danmuleft[i] +"px";
-     document.getElementById(danmudiv[i]).style.left=danmuleftwithpix[i];
-     
+     if (document.getElementById(danmudiv[i])==null){    
+     }
+     else{
+        document.getElementById(danmudiv[i]).style.left=danmuleftwithpix[i];
+     }
+    
      if ((0-danmuleft[i])>$(window).width() )
      {
         danmuleft[i] = $(window).width()-20;
      }
 
-
+    
     }
-    console.log(danmuleftwithpix[0]);
+  
 }, 10);
 
 // setInterval(function(){
